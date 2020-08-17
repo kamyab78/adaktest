@@ -1,0 +1,1 @@
+{"version":3,"sources":["Land.css"],"names":[],"mappings":"AAAA,MACI,YAAa,CACb,sBACJ,CACA,KACI,iBACJ","file":"main.f9f33dd3.chunk.css","sourcesContent":[".main{\n    height: 100vh;\n    background-color: brown;\n}\nbody{\n    overflow-x: hidden;\n}"]}

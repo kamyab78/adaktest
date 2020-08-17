@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/adaktest/static/css/main.f9f33dd3.chunk.css",
+    "main.js": "/adaktest/static/js/main.6ac3005d.chunk.js",
+    "main.js.map": "/adaktest/static/js/main.6ac3005d.chunk.js.map",
+    "runtime-main.js": "/adaktest/static/js/runtime-main.64acb4fa.js",
+    "runtime-main.js.map": "/adaktest/static/js/runtime-main.64acb4fa.js.map",
+    "static/css/2.11829350.chunk.css": "/adaktest/static/css/2.11829350.chunk.css",
+    "static/js/2.ba887031.chunk.js": "/adaktest/static/js/2.ba887031.chunk.js",
+    "static/js/2.ba887031.chunk.js.map": "/adaktest/static/js/2.ba887031.chunk.js.map",
+    "index.html": "/adaktest/index.html",
+    "precache-manifest.ebe01dcf7bf2410d32a5337d3b222b96.js": "/adaktest/precache-manifest.ebe01dcf7bf2410d32a5337d3b222b96.js",
+    "service-worker.js": "/adaktest/service-worker.js",
+    "static/css/2.11829350.chunk.css.map": "/adaktest/static/css/2.11829350.chunk.css.map",
+    "static/css/main.f9f33dd3.chunk.css.map": "/adaktest/static/css/main.f9f33dd3.chunk.css.map",
+    "static/js/2.ba887031.chunk.js.LICENSE.txt": "/adaktest/static/js/2.ba887031.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64acb4fa.js",
+    "static/css/2.11829350.chunk.css",
+    "static/js/2.ba887031.chunk.js",
+    "static/css/main.f9f33dd3.chunk.css",
+    "static/js/main.6ac3005d.chunk.js"
+  ]
+}

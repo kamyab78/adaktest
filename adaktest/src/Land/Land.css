@@ -330,11 +330,13 @@ font-size: 15px;
 min-width: 50%;
 }
 .modal-content{
+   
     border-radius: 27px;
     text-align: center;
     background-color: rgb(35, 35, 35);
     color: whitesmoke;
     margin: auto;
+    margin-top: 10%;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 40px;

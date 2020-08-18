@@ -45,6 +45,18 @@ class Land extends Component {
                 };
 
             })
+            $("#send_btn").click(function () {
+         ws.send("SENT: Rock it with HTML5 WebSocket")
+         var x = document.getElementById("snackbar-send");
+         x.className = "show";
+         setTimeout(function () {
+             x.className = x.className.replace("show", "");
+         }, 3000);
+         ws.onmessage = evt => {
+             var res=evt.data.split(':')
+$('.pm').append('RESPONSE: ' + res[1]+'\n')
+         }
+            })
             $(".btn_start").click(function () {
                 var elmnt = document.getElementById("webs_page");
                 elmnt.scrollIntoView({ behavior: 'smooth' });
@@ -102,7 +114,7 @@ class Land extends Component {
                    <Button id='disconnect' variant="danger" style={{marginLeft:'20px' , display:'none'}}>Disconect</Button>
                    </div>
                    <div style={{marginLeft:'40px'}}>
-                   <input className='inputfield'></input>
+                   <input type='text' className='inputfield' readOnly value='Rock it with HTML5 WebSocket'></input>
                    <Button id='send_btn' variant="outline-info" style={{marginLeft:'20px' , display:'none'}}>Send</Button>
                    </div>
                    <div >
@@ -114,7 +126,8 @@ class Land extends Component {
 
                     </div>
                     <div id="snackbar-connect">Successfully Connect</div>
-                    <div id="snackbar-disconnect">Successfully Connect</div>
+                    <div id="snackbar-disconnect">Successfully DisConnect</div>
+                    <div id="snackbar-send">Successfully Send</div>
                 </div>
             </div>
         )

@@ -155,7 +155,7 @@ class Land extends Component {
 
                         <div >
                             <Button id='connect' variant="success" style={{ marginLeft: '20px'  }}>Connect</Button>
-                            <Button id='disconnect' variant="danger" style={{ marginLeft: '20px' }} >Disconect</Button>
+                            <Button id='disconnect' variant="danger" style={{ marginLeft: '20px' }} >Disconnect</Button>
                         </div>
                         <div style={{ marginLeft: '40px' }}>
                             <input type='text' className='inputfield'  ></input>

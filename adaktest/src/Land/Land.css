@@ -206,7 +206,7 @@ body{
 .pm{
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif ;
     margin-top: 35px;
-    margin-left: 50px;
+    margin-left: 68vh;
 margin-right: 20px;
    height: 250px;
     color: whitesmoke;
@@ -303,6 +303,8 @@ margin-right: 20px;
     white-space: initial;
     text-align: left;
 float: left;
+font-size: 15px;
+
 
 }
 .modal{
@@ -352,6 +354,9 @@ min-width: 50%;
 .yes{
       position:initial;
       height: 40px;
+}
+#pm_base{
+    text-align:left ; float:left ; font-size:15px;
 }
 
 

@@ -161,9 +161,9 @@ class Land extends Component {
                             <input type='text' className='inputfield'  ></input>
                             <Button id='send_btn' variant="outline-info" style={{ marginLeft: '20px' }} >Send</Button>
                         </div>
-                        <div style={{display:'flex' , flexDirection:'row'}} >
+                        <div style={{display:'flex' , flexDirection:'row'}} className='col-sm-12 col-lg-12 col-xl-12 col-md-12 justify-content-center' >
                             <div id='pmid' className="pm" readOnly> </div>
-                            <Button id='clear' variant="outline-danger" style={{ height:'50px' , marginTop:'150px'}} >Clear</Button>
+                            <Button id='clear' variant="outline-danger" style={{ height:'50px' , marginTop:'150px' , marginLeft:'10px'}} >Clear</Button>
 
                         </div>
 

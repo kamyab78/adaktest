@@ -161,13 +161,13 @@ body{
 }
 @media screen  and (max-width:800px)  {
   .pm{
-    height: 50%;
+    
     width: 50%;
   }
 }
 @media screen  and (min-width:801px)  {
     .pm{
-      height: 30%;
+      
       width: 20%;
     }
   }
@@ -208,7 +208,7 @@ body{
     margin-top: 85px;
     margin-left: 20px;
 margin-right: 20px;
-   
+   height: 400px;
     color: whitesmoke;
     font-size: 18px;
     white-space: initial;

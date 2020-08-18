@@ -7,9 +7,10 @@ import './Land.css'
 import Particles from 'react-particles-js';
 var ws = ''
 const url = 'wss://echo.websocket.org/'
+
 class Land extends Component {
     componentDidMount() {
-
+      
       
         $(document).ready(function () {
             $("#connect").click(function () {
@@ -20,8 +21,29 @@ class Land extends Component {
                     setTimeout(function () {
                         x.className = x.className.replace("show", "");
                     }, 3000);
-                    $(".pm").append("Connect")
+                    $(".pm").append("Connect"+'\n')
+                    var element = document.getElementById("pmid");
+                    element.scrollTop = element.scrollHeight;
+                    $("#disconnect").fadeIn()
+                    $("#send_btn").fadeIn()
                 };
+            })
+            $("#disconnect").click(function () {
+                console.log('dis')
+                ws.close()
+                ws.onclose = function () {
+                    var x = document.getElementById("snackbar-disconnect");
+                    x.className = "show";
+                    setTimeout(function () {
+                        x.className = x.className.replace("show", "");
+                    }, 3000);
+                    $(".pm").append("DisConnect"+'\n')
+                    var element = document.getElementById("pmid");
+                    element.scrollTop = element.scrollHeight;
+                    $("#disconnect").fadeOut()
+                    $("#send_btn").fadeOut()
+                };
+
             })
             $(".btn_start").click(function () {
                 var elmnt = document.getElementById("webs_page");
@@ -77,11 +99,11 @@ class Land extends Component {
                    
                     <div >
                     <Button id='connect' variant="success" style={{marginLeft:'20px'}}>Connect</Button>
-                   <Button variant="danger" style={{marginLeft:'20px'}}>Disconect</Button>
+                   <Button id='disconnect' variant="danger" style={{marginLeft:'20px' , display:'none'}}>Disconect</Button>
                    </div>
                    <div style={{marginLeft:'40px'}}>
                    <input className='inputfield'></input>
-                   <Button variant="outline-info" style={{marginLeft:'20px'}}>Send</Button>
+                   <Button id='send_btn' variant="outline-info" style={{marginLeft:'20px' , display:'none'}}>Send</Button>
                    </div>
                    <div >
                    <textarea id='pmid' className="pm">

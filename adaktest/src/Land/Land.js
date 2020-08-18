@@ -12,6 +12,8 @@ class Land extends Component {
 
 
         $(document).ready(function () {
+            $(".inputfield").prop("readonly", true);
+            $('.inputfield').val('Rock it with HTML5 WebSocket')
             document.getElementById('disconnect').disabled = 'disabled'
             document.getElementById('send_btn').disabled = 'disabled'
             $("#connect").click(function () {
@@ -22,19 +24,20 @@ class Land extends Component {
                     setTimeout(function () {
                         x.className = x.className.replace("show", "");
                     }, 3000);
-                    $(".pm").append("\n")
-                    $(".pm").append("Connect")
-
-                    var element = document.getElementById("pmid");
-                    element.scrollTop = element.scrollHeight;
+                   
+                    $(".pm").append("<div id='pm_base'>Connect</div>")
+                    $(".pm").append("<br/>")
+                    $(".inputfield").prop("readonly", false);
+                  
                     document.getElementById('connect').disabled = 'disabled'
                     document.getElementById('disconnect').disabled = false
                     document.getElementById('send_btn').disabled = false
-
+                    var element = document.getElementById("pmid");
+                    element.scrollTop = element.scrollHeight;
                 };
             })
             $("#disconnect").click(function () {
-                console.log('dis')
+               
                 ws.close()
                 ws.onclose = function () {
                     var x = document.getElementById("snackbar-disconnect");
@@ -42,19 +45,27 @@ class Land extends Component {
                     setTimeout(function () {
                         x.className = x.className.replace("show", "");
                     }, 3000);
-                    $(".pm").append("\n")
+                    
                   
-                    $(".pm").append("DisConnect")
-                    var element = document.getElementById("pmid");
-                    element.scrollTop = element.scrollHeight;
+                    $(".pm").append("<div id='pm_base' >Disconnect</div>")
+                    $(".pm").append("<br/>")
+                    $(".inputfield").prop("readonly", true);
+                   
                     document.getElementById('disconnect').disabled = 'disabled'
                     document.getElementById('send_btn').disabled = 'disabled'
                     document.getElementById('connect').disabled = false
+                    var element = document.getElementById("pmid");
+                    element.scrollTop = element.scrollHeight;
                 };
 
             })
             $("#send_btn").click(function () {
-                ws.send("SENT: Rock it with HTML5 WebSocket")
+               var input= $(".inputfield").val()
+                
+                ws.send("SENT: "+input)
+               
+                $('.pm').append("<div id='pmeman'>Sent: "+input+"</div>")
+                $(".pm").append("<br/>")
                 var x = document.getElementById("snackbar-send");
                 x.className = "show";
                 setTimeout(function () {
@@ -62,9 +73,13 @@ class Land extends Component {
                 }, 3000);
                 ws.onmessage = evt => {
                     var res = evt.data.split(':')
-                    $(".pm").append("\n")
-                    $('.pm').append('RESPONSE: ' + res[1] + '\n')
+                   
+                  
+                    $('.pm').append( "<div id='pmeman' style='color: blue;'>Response: "+res[1] +"</div>")
+                    $(".pm").append("<br/>")
                 }
+                var element = document.getElementById("pmid");
+                    element.scrollTop = element.scrollHeight;
             })
             $(".btn_start").click(function () {
                 var elmnt = document.getElementById("webs_page");
@@ -139,25 +154,22 @@ class Land extends Component {
                     <div className='row connection'>
 
                         <div >
-                            <Button id='connect' variant="success" style={{ marginLeft: '20px' }}>Connect</Button>
+                            <Button id='connect' variant="success" style={{ marginLeft: '20px'  }}>Connect</Button>
                             <Button id='disconnect' variant="danger" style={{ marginLeft: '20px' }} >Disconect</Button>
                         </div>
                         <div style={{ marginLeft: '40px' }}>
-                            <input type='text' className='inputfield' readOnly value='Rock it with HTML5 WebSocket'></input>
+                            <input type='text' className='inputfield'  ></input>
                             <Button id='send_btn' variant="outline-info" style={{ marginLeft: '20px' }} >Send</Button>
                         </div>
-                        <div  >
-                            <textarea id='pmid' className="pm" readOnly>
-
-
-                            </textarea>
-                            <Button id='clear' variant="outline-danger" style={{ marginBottom: '40px' }} >Clear</Button>
+                        <div style={{display:'flex' , flexDirection:'row'}} >
+                            <div id='pmid' className="pm" readOnly> </div>
+                            <Button id='clear' variant="outline-danger" style={{ height:'50px' , marginTop:'150px'}} >Clear</Button>
 
                         </div>
 
                     </div>
                     <div id="snackbar-connect">Successfully Connect</div>
-                    <div id="snackbar-disconnect">Successfully DisConnect</div>
+                    <div id="snackbar-disconnect">Successfully Disconnect</div>
                     <div id="snackbar-send">Successfully Send</div>
                     <div id="snackbar-clear">Successfully Clear</div>
                     <div id="Modal" class="modal">

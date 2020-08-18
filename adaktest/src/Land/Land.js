@@ -10,8 +10,8 @@ const url = 'wss://echo.websocket.org/'
 
 class Land extends Component {
     componentDidMount() {
-      
-      
+
+
         $(document).ready(function () {
             $("#connect").click(function () {
                 ws = new WebSocket(url)
@@ -21,7 +21,7 @@ class Land extends Component {
                     setTimeout(function () {
                         x.className = x.className.replace("show", "");
                     }, 3000);
-                    $(".pm").append("Connect"+'\n')
+                    $(".pm").append("Connect" + '\n')
                     var element = document.getElementById("pmid");
                     element.scrollTop = element.scrollHeight;
                     $("#disconnect").fadeIn()
@@ -37,7 +37,7 @@ class Land extends Component {
                     setTimeout(function () {
                         x.className = x.className.replace("show", "");
                     }, 3000);
-                    $(".pm").append("DisConnect"+'\n')
+                    $(".pm").append("DisConnect" + '\n')
                     var element = document.getElementById("pmid");
                     element.scrollTop = element.scrollHeight;
                     $("#disconnect").fadeOut()
@@ -46,16 +46,16 @@ class Land extends Component {
 
             })
             $("#send_btn").click(function () {
-         ws.send("SENT: Rock it with HTML5 WebSocket")
-         var x = document.getElementById("snackbar-send");
-         x.className = "show";
-         setTimeout(function () {
-             x.className = x.className.replace("show", "");
-         }, 3000);
-         ws.onmessage = evt => {
-             var res=evt.data.split(':')
-$('.pm').append('RESPONSE: ' + res[1]+'\n')
-         }
+                ws.send("SENT: Rock it with HTML5 WebSocket")
+                var x = document.getElementById("snackbar-send");
+                x.className = "show";
+                setTimeout(function () {
+                    x.className = x.className.replace("show", "");
+                }, 3000);
+                ws.onmessage = evt => {
+                    var res = evt.data.split(':')
+                    $('.pm').append('RESPONSE: ' + res[1] + '\n')
+                }
             })
             $(".btn_start").click(function () {
                 var elmnt = document.getElementById("webs_page");
@@ -106,23 +106,23 @@ $('.pm').append('RESPONSE: ' + res[1]+'\n')
                 </div>
                 <div className='col-sm-12 col-lg-12 col-xl-12 col-md-12 webs' id='webs_page'>
                     <h1 className='title'>WebSocket Page</h1>
-                    
+
                     <div className='row connection'>
-                   
-                    <div >
-                    <Button id='connect' variant="success" style={{marginLeft:'20px'}}>Connect</Button>
-                   <Button id='disconnect' variant="danger" style={{marginLeft:'20px' , display:'none'}}>Disconect</Button>
-                   </div>
-                   <div style={{marginLeft:'40px'}}>
-                   <input type='text' className='inputfield' readOnly value='Rock it with HTML5 WebSocket'></input>
-                   <Button id='send_btn' variant="outline-info" style={{marginLeft:'20px' , display:'none'}}>Send</Button>
-                   </div>
-                   <div >
-                   <textarea id='pmid' className="pm">
+
+                        <div >
+                            <Button id='connect' variant="success" style={{ marginLeft: '20px' }}>Connect</Button>
+                            <Button id='disconnect' variant="danger" style={{ marginLeft: '20px', display: 'none' }}>Disconect</Button>
+                        </div>
+                        <div style={{ marginLeft: '40px' }}>
+                            <input type='text' className='inputfield' readOnly value='Rock it with HTML5 WebSocket'></input>
+                            <Button id='send_btn' variant="outline-info" style={{ marginLeft: '20px', display: 'none' }}>Send</Button>
+                        </div>
+                        <div >
+                            <textarea id='pmid' className="pm" readOnly>
 
 
-</textarea>
-                   </div>
+                            </textarea>
+                        </div>
 
                     </div>
                     <div id="snackbar-connect">Successfully Connect</div>

@@ -64,7 +64,7 @@ class Land extends Component {
                 
                 ws.send("SENT: "+input)
                
-                $('.pm').append("<div id='pmeman'>Sent: "+input+"</div>")
+                $('.pm').append("<div id='pm_base'>Sent: "+input+"</div>")
                 $(".pm").append("<br/>")
                 var x = document.getElementById("snackbar-send");
                 x.className = "show";
@@ -75,7 +75,7 @@ class Land extends Component {
                     var res = evt.data.split(':')
                    
                   
-                    $('.pm').append( "<div id='pmeman' style='color: blue;'>Response: "+res[1] +"</div>")
+                    $('.pm').append( "<div id='pm_base' style='color: blue;'>Response: "+res[1] +"</div>")
                     $(".pm").append("<br/>")
                 }
                 var element = document.getElementById("pmid");

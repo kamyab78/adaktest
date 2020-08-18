@@ -174,7 +174,7 @@ class Land extends Component {
                     <div id="snackbar-clear">Successfully Clear</div>
                     <div id="Modal" class="modal">
                         <div class="modal-content">
-                            <h3 className='txt'>Are you sure clear log? </h3>
+                            <h3 className='txt'>Are you sure? </h3>
 
                             <div className='btns'>
 

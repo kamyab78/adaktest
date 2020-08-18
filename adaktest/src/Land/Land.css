@@ -159,3 +159,100 @@ body{
        margin-top: -65vh;
     }
 }
+@media screen  and (max-width:800px)  {
+  .pm{
+    height: 50%;
+    width: 50%;
+  }
+}
+@media screen  and (min-width:801px)  {
+    .pm{
+      height: 30%;
+      width: 20%;
+    }
+  }
+.webs{
+    height: 100vh;
+    background-color: darkslategray;
+    text-align: center;
+}
+.title{
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+    border-bottom: solid 4px white;
+    
+}
+.connection{
+    display: flex;
+    flex-direction: column;
+   margin-top: 80px;
+}
+.flex_button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+.inputfield{
+    margin-top: 100px;
+    width: 300px;
+    
+}
+.urlfield{
+    margin-top: 50px;
+    width: 300px;
+    margin-left: 250px;
+}
+.pm{
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif ;
+    margin-top: 85px;
+    margin-left: 20px;
+margin-right: 20px;
+   
+    color: whitesmoke;
+    font-size: 18px;
+    white-space: initial;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: rgb(255, 255, 255 , 0.3);
+}
+#snackbar-connect{
+    visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar-connect.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  #snackbar-disconnect{
+    visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar-disconnect.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
